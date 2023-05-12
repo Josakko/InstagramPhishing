@@ -57,7 +57,3 @@ async function sendInfo() {
   //  window.location.replace("https://www.instagram.com/p/BzI9vmcHdvN")
   //}, 1000);
 }
-
-
-
-//http://127.0.0.1:5500/
