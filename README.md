@@ -14,7 +14,7 @@ Usage exapmle down below
 Look of the page down below
 
 <p align="center">
-  <img alt="issue" src="[https://github.com/Josakko/InstagramPhishing/blob/main/img1/img1.png?raw=true](https://github.com/Josakko/InstagramPhishing/blob/main/img/img1.png?raw=true)" width="600px">
+  <img alt="issue" src="https://github.com/Josakko/InstagramPhishing/blob/main/img/img1.png?raw=true" width="600px">
 </p>
 
 ## Need Help?
